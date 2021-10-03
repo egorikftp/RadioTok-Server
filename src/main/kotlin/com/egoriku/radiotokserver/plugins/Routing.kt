@@ -13,15 +13,6 @@ import io.ktor.serialization.*
 import kotlinx.serialization.json.Json
 
 fun Application.configureRouting() {
-    install(CallLogging)
-    install(ContentNegotiation) {
-        json(
-            Json {
-                ignoreUnknownKeys = true
-            }
-        )
-    }
-
     val repository: RadioStationRepository = InMemoryRadioStationRepository()
 
     routing {
