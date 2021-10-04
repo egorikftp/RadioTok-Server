@@ -1,15 +1,16 @@
 package com.egoriku.radiotokserver.plugins
 
 import com.egoriku.radiotokserver.entity.StationEntityDraft
-import com.egoriku.radiotokserver.repository.DbRadioStationRepository
+import com.egoriku.radiotokserver.repository.RadioStationRepository
 import io.ktor.application.*
 import io.ktor.http.*
 import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
+import org.koin.ktor.ext.inject
 
-fun Application.configureRouting() {
-    val repository = DbRadioStationRepository()
+fun Application.installRouting() {
+    val repository by inject<RadioStationRepository>()
 
     routing {
         get("/") {

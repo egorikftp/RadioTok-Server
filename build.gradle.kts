@@ -32,6 +32,9 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
 
     implementation("org.postgresql:postgresql:42.2.23")
+
+    implementation("io.insert-koin:koin-ktor:3.1.2")
+    implementation("io.insert-koin:koin-logger-slf4j:3.1.2")
 }
 
 tasks.create("stage"){

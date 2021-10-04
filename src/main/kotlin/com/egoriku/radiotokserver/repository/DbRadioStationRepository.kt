@@ -4,9 +4,9 @@ import com.egoriku.radiotokserver.db.DatabaseManager
 import com.egoriku.radiotokserver.entity.StationEntity
 import com.egoriku.radiotokserver.entity.StationEntityDraft
 
-class DbRadioStationRepository : RadioStationRepository {
-
-    private val databaseManager = DatabaseManager()
+class DbRadioStationRepository(
+    private val databaseManager: DatabaseManager
+) : RadioStationRepository {
 
     override fun getAllStations(): List<StationEntity> {
         return databaseManager.getAllRadioStations()
