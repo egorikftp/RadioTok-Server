@@ -1,0 +1,1 @@
+web: ./build/install/com.egoriku.radiotokserver/bin/com.egoriku.radiotokserver
