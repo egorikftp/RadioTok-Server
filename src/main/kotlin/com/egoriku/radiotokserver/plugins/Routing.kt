@@ -1,19 +1,15 @@
 package com.egoriku.radiotokserver.plugins
 
 import com.egoriku.radiotokserver.entity.StationEntityDraft
-import com.egoriku.radiotokserver.repository.InMemoryRadioStationRepository
-import com.egoriku.radiotokserver.repository.RadioStationRepository
+import com.egoriku.radiotokserver.repository.DbRadioStationRepository
 import io.ktor.application.*
-import io.ktor.features.*
 import io.ktor.http.*
 import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
-import io.ktor.serialization.*
-import kotlinx.serialization.json.Json
 
 fun Application.configureRouting() {
-    val repository: RadioStationRepository = InMemoryRadioStationRepository()
+    val repository = DbRadioStationRepository()
 
     routing {
         get("/") {

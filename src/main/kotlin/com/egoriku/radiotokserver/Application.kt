@@ -11,10 +11,6 @@ import kotlinx.serialization.json.Json
 
 fun main() {
     embeddedServer(factory = Netty, port = port) {
-
-        log.info(System.getenv("DATABASE_URL"))
-        log.info(System.getenv("HEROKU_POSTGRESQL_COLOR_URL"))
-
         install(CallLogging)
         install(ContentNegotiation) {
             json(
